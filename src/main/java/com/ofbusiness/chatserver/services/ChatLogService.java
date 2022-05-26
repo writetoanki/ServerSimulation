@@ -9,7 +9,7 @@ public interface ChatLogService {
 
 		public List<ChatLogDTO> getChatLogs(String user, int limit, int start);
 
-		public void deleteAll(String user);
+		public Long deleteAll(String user);
 
 		public void deleteChatLog(String user, int msgId);
 }

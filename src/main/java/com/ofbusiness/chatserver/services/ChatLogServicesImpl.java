@@ -30,9 +30,9 @@ public class ChatLogServicesImpl implements ChatLogService{
 		}
 	}
 	@Override
-	public void deleteAll(String user) {
+	public Long deleteAll(String user) {
 		
-		chatLogDao.deleteAll();
+		return chatLogDao.removeByUser(user);
 	}
 	@Override
 	public void deleteChatLog(String user, int msgId) {

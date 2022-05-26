@@ -16,5 +16,7 @@ public interface ChatLogDao extends JpaRepository<ChatLogDTO, Integer> {
 	List<ChatLogDTO> findByUser(String user, int limit, int start);
 	@Query(value="SELECT msg_id, is_sent, message, timestamp, user from chat_logdto WHERE user = ?1 Order By timestamp DESC LIMIT ?2",nativeQuery = true)
 	List<ChatLogDTO> findByUser(String user,int limit);
+	
+	Long removeByUser(String user);
 
 }
